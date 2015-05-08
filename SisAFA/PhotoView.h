@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  PhotoView.h
 //  SisAFA
 //
 //  Created by Bryan Fernandes on 06/05/15.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface PhotoView : UIImageView
 
 @end
-

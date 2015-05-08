@@ -9,11 +9,21 @@
 /* Begin PBXBuildFile section */
 		93469B161AFA8785005A5CC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B151AFA8785005A5CC5 /* main.m */; };
 		93469B191AFA8785005A5CC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B181AFA8785005A5CC5 /* AppDelegate.m */; };
-		93469B1C1AFA8785005A5CC5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B1B1AFA8785005A5CC5 /* ViewController.m */; };
-		93469B1F1AFA8785005A5CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93469B1D1AFA8785005A5CC5 /* Main.storyboard */; };
+		93469B1C1AFA8785005A5CC5 /* HomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B1B1AFA8785005A5CC5 /* HomeScreen.m */; };
 		93469B211AFA8785005A5CC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93469B201AFA8785005A5CC5 /* Images.xcassets */; };
 		93469B241AFA8785005A5CC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93469B221AFA8785005A5CC5 /* LaunchScreen.xib */; };
 		93469B301AFA8785005A5CC5 /* SisAFATests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B2F1AFA8785005A5CC5 /* SisAFATests.m */; };
+		93469B3E1AFA8DBA005A5CC5 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B3D1AFA8DBA005A5CC5 /* Information.m */; };
+		93469B411AFA8FB1005A5CC5 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B401AFA8FB1005A5CC5 /* MapView.m */; };
+		93469B431AFA906C005A5CC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93469B421AFA906C005A5CC5 /* MapKit.framework */; };
+		93469B461AFA928E005A5CC5 /* PhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B451AFA928E005A5CC5 /* PhotoView.m */; };
+		93469B511AFA98D3005A5CC5 /* dakar-seat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93469B4F1AFA98D3005A5CC5 /* dakar-seat.jpg */; };
+		93469B521AFA98D3005A5CC5 /* city.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93469B501AFA98D3005A5CC5 /* city.jpg */; };
+		93469B561AFA9923005A5CC5 /* alarm-button-edited.png in Resources */ = {isa = PBXBuildFile; fileRef = 93469B531AFA9923005A5CC5 /* alarm-button-edited.png */; };
+		93469B571AFA9923005A5CC5 /* power-button-512-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 93469B541AFA9923005A5CC5 /* power-button-512-red.png */; };
+		93469B581AFA9923005A5CC5 /* Settings_black-512-edited.png in Resources */ = {isa = PBXBuildFile; fileRef = 93469B551AFA9923005A5CC5 /* Settings_black-512-edited.png */; };
+		93469B5B1AFAA8CD005A5CC5 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B5A1AFAA8CD005A5CC5 /* Settings.m */; };
+		93469B5E1AFAAC18005A5CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93469B5C1AFAAC18005A5CC5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +42,28 @@
 		93469B151AFA8785005A5CC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93469B171AFA8785005A5CC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93469B181AFA8785005A5CC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		93469B1A1AFA8785005A5CC5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		93469B1B1AFA8785005A5CC5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		93469B1E1AFA8785005A5CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93469B1A1AFA8785005A5CC5 /* HomeScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeScreen.h; sourceTree = "<group>"; };
+		93469B1B1AFA8785005A5CC5 /* HomeScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeScreen.m; sourceTree = "<group>"; };
 		93469B201AFA8785005A5CC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		93469B231AFA8785005A5CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		93469B291AFA8785005A5CC5 /* SisAFATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SisAFATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93469B2E1AFA8785005A5CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93469B2F1AFA8785005A5CC5 /* SisAFATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SisAFATests.m; sourceTree = "<group>"; };
+		93469B3C1AFA8DBA005A5CC5 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information.h; sourceTree = "<group>"; };
+		93469B3D1AFA8DBA005A5CC5 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information.m; sourceTree = "<group>"; };
+		93469B3F1AFA8FB1005A5CC5 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		93469B401AFA8FB1005A5CC5 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		93469B421AFA906C005A5CC5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		93469B441AFA928E005A5CC5 /* PhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoView.h; sourceTree = "<group>"; };
+		93469B451AFA928E005A5CC5 /* PhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoView.m; sourceTree = "<group>"; };
+		93469B4F1AFA98D3005A5CC5 /* dakar-seat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dakar-seat.jpg"; sourceTree = "<group>"; };
+		93469B501AFA98D3005A5CC5 /* city.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = city.jpg; sourceTree = "<group>"; };
+		93469B531AFA9923005A5CC5 /* alarm-button-edited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm-button-edited.png"; sourceTree = "<group>"; };
+		93469B541AFA9923005A5CC5 /* power-button-512-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "power-button-512-red.png"; sourceTree = "<group>"; };
+		93469B551AFA9923005A5CC5 /* Settings_black-512-edited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings_black-512-edited.png"; sourceTree = "<group>"; };
+		93469B591AFAA8CD005A5CC5 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		93469B5A1AFAA8CD005A5CC5 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		93469B5D1AFAAC18005A5CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93469B431AFA906C005A5CC5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,9 +108,17 @@
 			children = (
 				93469B171AFA8785005A5CC5 /* AppDelegate.h */,
 				93469B181AFA8785005A5CC5 /* AppDelegate.m */,
-				93469B1A1AFA8785005A5CC5 /* ViewController.h */,
-				93469B1B1AFA8785005A5CC5 /* ViewController.m */,
-				93469B1D1AFA8785005A5CC5 /* Main.storyboard */,
+				93469B1A1AFA8785005A5CC5 /* HomeScreen.h */,
+				93469B1B1AFA8785005A5CC5 /* HomeScreen.m */,
+				93469B3C1AFA8DBA005A5CC5 /* Information.h */,
+				93469B3D1AFA8DBA005A5CC5 /* Information.m */,
+				93469B3F1AFA8FB1005A5CC5 /* MapView.h */,
+				93469B401AFA8FB1005A5CC5 /* MapView.m */,
+				93469B441AFA928E005A5CC5 /* PhotoView.h */,
+				93469B451AFA928E005A5CC5 /* PhotoView.m */,
+				93469B591AFAA8CD005A5CC5 /* Settings.h */,
+				93469B5A1AFAA8CD005A5CC5 /* Settings.m */,
+				93469B5C1AFAAC18005A5CC5 /* Main.storyboard */,
 				93469B201AFA8785005A5CC5 /* Images.xcassets */,
 				93469B221AFA8785005A5CC5 /* LaunchScreen.xib */,
 				93469B131AFA8785005A5CC5 /* Supporting Files */,
@@ -96,6 +129,9 @@
 		93469B131AFA8785005A5CC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				93469B481AFA98AA005A5CC5 /* images */,
+				93469B471AFA98A0005A5CC5 /* icons */,
+				93469B421AFA906C005A5CC5 /* MapKit.framework */,
 				93469B141AFA8785005A5CC5 /* Info.plist */,
 				93469B151AFA8785005A5CC5 /* main.m */,
 			);
@@ -117,6 +153,25 @@
 				93469B2E1AFA8785005A5CC5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93469B471AFA98A0005A5CC5 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				93469B531AFA9923005A5CC5 /* alarm-button-edited.png */,
+				93469B541AFA9923005A5CC5 /* power-button-512-red.png */,
+				93469B551AFA9923005A5CC5 /* Settings_black-512-edited.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
+		93469B481AFA98AA005A5CC5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				93469B4F1AFA98D3005A5CC5 /* dakar-seat.jpg */,
+				93469B501AFA98D3005A5CC5 /* city.jpg */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +254,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93469B1F1AFA8785005A5CC5 /* Main.storyboard in Resources */,
+				93469B511AFA98D3005A5CC5 /* dakar-seat.jpg in Resources */,
+				93469B521AFA98D3005A5CC5 /* city.jpg in Resources */,
+				93469B571AFA9923005A5CC5 /* power-button-512-red.png in Resources */,
+				93469B5E1AFAAC18005A5CC5 /* Main.storyboard in Resources */,
 				93469B241AFA8785005A5CC5 /* LaunchScreen.xib in Resources */,
+				93469B561AFA9923005A5CC5 /* alarm-button-edited.png in Resources */,
+				93469B581AFA9923005A5CC5 /* Settings_black-512-edited.png in Resources */,
 				93469B211AFA8785005A5CC5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93469B1C1AFA8785005A5CC5 /* ViewController.m in Sources */,
+				93469B1C1AFA8785005A5CC5 /* HomeScreen.m in Sources */,
 				93469B191AFA8785005A5CC5 /* AppDelegate.m in Sources */,
+				93469B3E1AFA8DBA005A5CC5 /* Information.m in Sources */,
+				93469B461AFA928E005A5CC5 /* PhotoView.m in Sources */,
 				93469B161AFA8785005A5CC5 /* main.m in Sources */,
+				93469B411AFA8FB1005A5CC5 /* MapView.m in Sources */,
+				93469B5B1AFAA8CD005A5CC5 /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,20 +308,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		93469B1D1AFA8785005A5CC5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				93469B1E1AFA8785005A5CC5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		93469B221AFA8785005A5CC5 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				93469B231AFA8785005A5CC5 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		93469B5C1AFAAC18005A5CC5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93469B5D1AFAAC18005A5CC5 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -352,6 +416,7 @@
 				INFOPLIST_FILE = SisAFA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -362,6 +427,7 @@
 				INFOPLIST_FILE = SisAFA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

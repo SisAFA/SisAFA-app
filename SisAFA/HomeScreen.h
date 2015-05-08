@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ViewController.h
 //  SisAFA
 //
 //  Created by Bryan Fernandes on 06/05/15.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface HomeScreen: UIViewController
 
-@property (strong, nonatomic) UIWindow *window;
-
+- (IBAction)powerButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *labelStatusSystem;
 
 @end
 

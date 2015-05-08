@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Settings.h
 //  SisAFA
 //
 //  Created by Bryan Fernandes on 06/05/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface Settings : UIViewController
 
 @end
-
