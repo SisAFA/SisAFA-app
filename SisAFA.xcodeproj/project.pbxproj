@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0FC3B6FAD1649C8CB44B6A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25200B58518F5689065C9476 /* libPods.a */; };
 		93469B161AFA8785005A5CC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B151AFA8785005A5CC5 /* main.m */; };
 		93469B191AFA8785005A5CC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B181AFA8785005A5CC5 /* AppDelegate.m */; };
 		93469B1C1AFA8785005A5CC5 /* HomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B1B1AFA8785005A5CC5 /* HomeScreen.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25200B58518F5689065C9476 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC2E6511B4C3ED04051664D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		93469B101AFA8785005A5CC5 /* SisAFA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SisAFA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93469B141AFA8785005A5CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93469B151AFA8785005A5CC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		93469B591AFAA8CD005A5CC5 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		93469B5A1AFAA8CD005A5CC5 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		93469B5D1AFAAC18005A5CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D32423BFF310D7C860100932 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93469B431AFA906C005A5CC5 /* MapKit.framework in Frameworks */,
+				6F0FC3B6FAD1649C8CB44B6A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,12 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5494ED9FE98E1BA46C8BBE2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25200B58518F5689065C9476 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		93469B071AFA8785005A5CC5 = {
 			isa = PBXGroup;
 			children = (
 				93469B121AFA8785005A5CC5 /* SisAFA */,
 				93469B2C1AFA8785005A5CC5 /* SisAFATests */,
 				93469B111AFA8785005A5CC5 /* Products */,
+				E296700883E96B90DF494719 /* Pods */,
+				5494ED9FE98E1BA46C8BBE2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +189,15 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		E296700883E96B90DF494719 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6AC2E6511B4C3ED04051664D /* Pods.debug.xcconfig */,
+				D32423BFF310D7C860100932 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93469B331AFA8785005A5CC5 /* Build configuration list for PBXNativeTarget "SisAFA" */;
 			buildPhases = (
+				787599386BDB3EC2BB26F8CF /* Check Pods Manifest.lock */,
 				93469B0C1AFA8785005A5CC5 /* Sources */,
 				93469B0D1AFA8785005A5CC5 /* Frameworks */,
 				93469B0E1AFA8785005A5CC5 /* Resources */,
+				BFFC2F72E288380A6328BF3A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -273,6 +299,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		787599386BDB3EC2BB26F8CF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BFFC2F72E288380A6328BF3A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		93469B0C1AFA8785005A5CC5 /* Sources */ = {
@@ -411,6 +470,7 @@
 		};
 		93469B341AFA8785005A5CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AC2E6511B4C3ED04051664D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SisAFA/Info.plist;
@@ -422,6 +482,7 @@
 		};
 		93469B351AFA8785005A5CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D32423BFF310D7C860100932 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SisAFA/Info.plist;
@@ -484,6 +545,7 @@
 				93469B351AFA8785005A5CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93469B361AFA8785005A5CC5 /* Build configuration list for PBXNativeTarget "SisAFATests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +554,7 @@
 				93469B381AFA8785005A5CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
