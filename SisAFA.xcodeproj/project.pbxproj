@@ -25,6 +25,7 @@
 		93469B581AFA9923005A5CC5 /* Settings_black-512-edited.png in Resources */ = {isa = PBXBuildFile; fileRef = 93469B551AFA9923005A5CC5 /* Settings_black-512-edited.png */; };
 		93469B5B1AFAA8CD005A5CC5 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B5A1AFAA8CD005A5CC5 /* Settings.m */; };
 		93469B5E1AFAAC18005A5CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93469B5C1AFAAC18005A5CC5 /* Main.storyboard */; };
+		93469B651B0EDD86005A5CC5 /* MQTTSisAFAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B641B0EDD86005A5CC5 /* MQTTSisAFAClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		93469B591AFAA8CD005A5CC5 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		93469B5A1AFAA8CD005A5CC5 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		93469B5D1AFAAC18005A5CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93469B631B0EDD86005A5CC5 /* MQTTSisAFAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSisAFAClient.h; sourceTree = "<group>"; };
+		93469B641B0EDD86005A5CC5 /* MQTTSisAFAClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSisAFAClient.m; sourceTree = "<group>"; };
 		D32423BFF310D7C860100932 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +104,7 @@
 		93469B071AFA8785005A5CC5 = {
 			isa = PBXGroup;
 			children = (
+				93469B5F1B0ED9F9005A5CC5 /* MQTTClient */,
 				93469B121AFA8785005A5CC5 /* SisAFA */,
 				93469B2C1AFA8785005A5CC5 /* SisAFATests */,
 				93469B111AFA8785005A5CC5 /* Products */,
@@ -187,6 +191,15 @@
 				93469B501AFA98D3005A5CC5 /* city.jpg */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		93469B5F1B0ED9F9005A5CC5 /* MQTTClient */ = {
+			isa = PBXGroup;
+			children = (
+				93469B631B0EDD86005A5CC5 /* MQTTSisAFAClient.h */,
+				93469B641B0EDD86005A5CC5 /* MQTTSisAFAClient.m */,
+			);
+			name = MQTTClient;
 			sourceTree = "<group>";
 		};
 		E296700883E96B90DF494719 /* Pods */ = {
@@ -339,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93469B1C1AFA8785005A5CC5 /* HomeScreen.m in Sources */,
+				93469B651B0EDD86005A5CC5 /* MQTTSisAFAClient.m in Sources */,
 				93469B191AFA8785005A5CC5 /* AppDelegate.m in Sources */,
 				93469B3E1AFA8DBA005A5CC5 /* Information.m in Sources */,
 				93469B461AFA928E005A5CC5 /* PhotoView.m in Sources */,

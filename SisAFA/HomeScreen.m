@@ -7,6 +7,7 @@
 //
 
 #import "HomeScreen.h"
+#import "MQTTSisAFAClient.h"
 
 @interface HomeScreen ()
 
@@ -15,10 +16,14 @@
 @implementation HomeScreen
 {
     BOOL active;
+    BOOL mqttConnected;
+    MQTTSisAFAClient *testMQTT;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    testMQTT = [[MQTTSisAFAClient alloc] init];
+    [testMQTT subscribeToATopicAndReceiveMessages];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,9 +36,16 @@
     if (active) {
         self.labelStatusSystem.text = @"Status: Activate";
         active = NO;
+        [testMQTT sendMessage];
+        mqttConnected = YES;
     } else {
         self.labelStatusSystem.text = @"Status: Desactivate";
         active = YES;
+        if (mqttConnected) {
+            [testMQTT disconnectFromTheServer];
+            mqttConnected = NO;
+        }
+        
     }
 }
 @end
