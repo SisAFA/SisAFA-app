@@ -24,6 +24,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     testMQTT = [[MQTTSisAFAClient alloc] init];
     [testMQTT subscribeToATopicAndReceiveMessages];
+    [testMQTT sendMessage];
+    mqttConnected = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,11 +38,14 @@
     if (active) {
         self.labelStatusSystem.text = @"Status: Activate";
         active = NO;
+        
         [testMQTT sendMessage];
         mqttConnected = YES;
+        
     } else {
         self.labelStatusSystem.text = @"Status: Desactivate";
         active = YES;
+        
         if (mqttConnected) {
             [testMQTT disconnectFromTheServer];
             mqttConnected = NO;

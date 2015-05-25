@@ -8,8 +8,10 @@
 
 #import "MQTTSisAFAClient.h"
 
-#define kMQTTServerHost @"iot.eclipse.org"
-#define kTopic @"/MQTTKit/example"
+//#define kMQTTServerHost @"iot.eclipse.org"
+//#define kTopic @"/MQTTKit/example"
+#define kMQTTServerHost @"matheusfonseca.me"
+#define kTopic @"/sisafa/sisafa_test/test"
 
 @implementation MQTTSisAFAClient
 
@@ -18,6 +20,9 @@
     // create the client with a unique client ID
     NSString *clientID = [UIDevice currentDevice].identifierForVendor.UUIDString;;
     self.client = [[MQTTClient alloc] initWithClientId:clientID];
+    self.client.username = @"sisafa_test";
+    self.client.password = @"T5KIP1";
+    self.client.port = 1883;
     
     // define the handler that will be called when MQTT messages are received by the client
     [self.client setMessageHandler:^(MQTTMessage *message) {
@@ -28,11 +33,17 @@
     // connect the MQTT client
     [self.client connectToHost:kMQTTServerHost
              completionHandler:^(MQTTConnectionReturnCode code) {
+                 
                  if (code == ConnectionAccepted) {
                      // when the client is connected, subscribe to the topic to receive message.
                      [self.client subscribe:kTopic
-                      withCompletionHandler:nil];
+                      withCompletionHandler:/*^(NSArray *grantedQos) {
+                          // The client is effectively subscribed to the topic when this completion handler is called
+                          NSLog(@"subscribed to topic %@", kTopic);
+                      }*/nil];
                  }
+                 
+                 NSLog(@"%lu", (unsigned long)code);
              }];
 }
 
@@ -41,9 +52,10 @@
     // connect to the MQTT server
     [self.client connectToHost:kMQTTServerHost
              completionHandler:^(NSUInteger code) {
+                 
                  if (code == ConnectionAccepted) {
                      // when the client is connected, send a MQTT message
-                     [self.client publishString:@"Hello, MQTT"
+                     [self.client publishString:@"MQTT iOS"
                                         toTopic:kTopic
                                         withQos:AtMostOnce
                                          retain:NO
@@ -51,6 +63,7 @@
                                   NSLog(@"message has been delivered");
                               }];
                  }
+                 
              }];
 }
 
