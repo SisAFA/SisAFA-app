@@ -333,7 +333,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxy-S1-7MM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="x4A-0G-FiE"/>
+                                    <barButtonItem title="Voltar" id="x4A-0G-FiE">
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="RSS-nt-n5b"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DPR-Vg-cVP" userLabel="Photo bigger" customClass="PhotoView">
@@ -433,19 +437,19 @@
                                 <exclude reference="kwl-uh-Jz6"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2wY-Ue-XM0"/>
-                                <exclude reference="BRM-zJ-dGz"/>
-                                <exclude reference="psk-Li-LjA"/>
-                                <exclude reference="f24-h4-KQE"/>
-                                <exclude reference="yw1-Wn-5vp"/>
-                                <exclude reference="Fiv-7r-wS6"/>
-                                <exclude reference="Tap-7e-UCR"/>
+                                <exclude reference="siX-ws-mgI"/>
                                 <exclude reference="DVa-lh-O0U"/>
                                 <exclude reference="Jvo-2i-1Y8"/>
                                 <exclude reference="Scy-NB-RKF"/>
                                 <exclude reference="VAg-I0-v6x"/>
                                 <exclude reference="xfE-mN-dZo"/>
-                                <exclude reference="siX-ws-mgI"/>
+                                <exclude reference="f24-h4-KQE"/>
+                                <exclude reference="yw1-Wn-5vp"/>
+                                <exclude reference="2wY-Ue-XM0"/>
+                                <exclude reference="BRM-zJ-dGz"/>
+                                <exclude reference="psk-Li-LjA"/>
+                                <exclude reference="Fiv-7r-wS6"/>
+                                <exclude reference="Tap-7e-UCR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -456,19 +460,19 @@
                                 <include reference="kwl-uh-Jz6"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2wY-Ue-XM0"/>
-                                <include reference="BRM-zJ-dGz"/>
-                                <include reference="psk-Li-LjA"/>
-                                <include reference="f24-h4-KQE"/>
-                                <include reference="yw1-Wn-5vp"/>
-                                <include reference="Fiv-7r-wS6"/>
-                                <include reference="Tap-7e-UCR"/>
+                                <include reference="siX-ws-mgI"/>
                                 <include reference="DVa-lh-O0U"/>
                                 <include reference="Jvo-2i-1Y8"/>
                                 <include reference="Scy-NB-RKF"/>
                                 <include reference="VAg-I0-v6x"/>
                                 <include reference="xfE-mN-dZo"/>
-                                <include reference="siX-ws-mgI"/>
+                                <include reference="f24-h4-KQE"/>
+                                <include reference="yw1-Wn-5vp"/>
+                                <include reference="2wY-Ue-XM0"/>
+                                <include reference="BRM-zJ-dGz"/>
+                                <include reference="psk-Li-LjA"/>
+                                <include reference="Fiv-7r-wS6"/>
+                                <include reference="Tap-7e-UCR"/>
                             </mask>
                         </variation>
                     </view>
@@ -501,4 +505,7 @@
         <image name="city.jpg" width="1080" height="1920"/>
         <image name="power-button-512-red.png" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="RSS-nt-n5b"/>
+    </inferredMetricsTieBreakers>
 </document>

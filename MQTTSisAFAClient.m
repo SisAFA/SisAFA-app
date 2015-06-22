@@ -11,39 +11,31 @@
 //#define kMQTTServerHost @"iot.eclipse.org"
 //#define kTopic @"/MQTTKit/example"
 #define kMQTTServerHost @"matheusfonseca.me"
-#define kTopic @"/sisafa/sisafa_test/test"
+#define kTopic @"sisafa/sisafa_test/test"
 
 @implementation MQTTSisAFAClient
 
 - (void)subscribeToATopicAndReceiveMessages
 {
     // create the client with a unique client ID
-    NSString *clientID = [UIDevice currentDevice].identifierForVendor.UUIDString;;
+    NSString *clientID = [UIDevice currentDevice].identifierForVendor.UUIDString;
+    NSLog(clientID);
     self.client = [[MQTTClient alloc] initWithClientId:clientID];
     self.client.username = @"sisafa_test";
     self.client.password = @"T5KIP1";
     self.client.port = 1883;
     
-    // define the handler that will be called when MQTT messages are received by the client
-    [self.client setMessageHandler:^(MQTTMessage *message) {
-        NSString *text = message.payloadString;
-        NSLog(@"received message %@", text);
-    }];
-    
     // connect the MQTT client
     [self.client connectToHost:kMQTTServerHost
              completionHandler:^(MQTTConnectionReturnCode code) {
-                 
                  if (code == ConnectionAccepted) {
                      // when the client is connected, subscribe to the topic to receive message.
                      [self.client subscribe:kTopic
-                      withCompletionHandler:/*^(NSArray *grantedQos) {
+                      withCompletionHandler:^(NSArray *grantedQos) {
                           // The client is effectively subscribed to the topic when this completion handler is called
                           NSLog(@"subscribed to topic %@", kTopic);
-                      }*/nil];
+                      }];
                  }
-                 
-                 NSLog(@"%lu", (unsigned long)code);
              }];
 }
 
@@ -60,7 +52,7 @@
                                         withQos:AtMostOnce
                                          retain:NO
                               completionHandler:^(int mid) {
-                                  NSLog(@"message has been delivered");
+                                  
                               }];
                  }
                  

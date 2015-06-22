@@ -24,6 +24,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - CollectionViewDelegate
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    UICollectionViewCell *cell = [ _imagesCollectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return _images.count;
+}
+
 /*
 #pragma mark - Navigation
 
