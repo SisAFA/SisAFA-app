@@ -19,4 +19,6 @@
 - (void)sendMessage;
 - (void)disconnectFromTheServer;
 
++ (id)sharedClient;
+
 @end

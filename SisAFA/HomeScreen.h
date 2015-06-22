@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MQTTSisAFAClient.h"
 
 @interface HomeScreen: UIViewController
 

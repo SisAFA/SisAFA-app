@@ -18,12 +18,12 @@
 - (void)subscribeToATopicAndReceiveMessages
 {
     // create the client with a unique client ID
-    NSString *clientID = [UIDevice currentDevice].identifierForVendor.UUIDString;
-    NSLog(clientID);
-    self.client = [[MQTTClient alloc] initWithClientId:clientID];
-    self.client.username = @"sisafa_test";
-    self.client.password = @"T5KIP1";
-    self.client.port = 1883;
+//    NSString *clientID = [UIDevice currentDevice].identifierForVendor.UUIDString;
+//    NSLog(@"%@", clientID);
+//    self.client = [[MQTTClient alloc] initWithClientId:clientID];
+//    self.client.username = @"sisafa_test";
+//    self.client.password = @"T5KIP1";
+//    self.client.port = 1883;
     
     // connect the MQTT client
     [self.client connectToHost:kMQTTServerHost
@@ -65,6 +65,42 @@
         // The client is disconnected when this completion handler is called
         NSLog(@"MQTT client is disconnected");
     }];
+}
+
+# pragma mark - SINGLETON
+
+- (id)init
+{
+    @throw [NSException exceptionWithName:@"Singleton" reason:@"Use + [SSSingletonData sharedState]" userInfo:nil];
+    
+    return nil;
+}
+
++ (id) sharedClient
+{
+    static MQTTSisAFAClient *sharedClient = nil;
+    
+    if (!sharedClient) {
+        sharedClient = [[self alloc] initPrivate];
+    }
+    
+    return sharedClient;
+}
+
+- (id) initPrivate
+{
+    self = [super init];
+    
+    if (self) {
+        NSString *clientID = [UIDevice currentDevice].identifierForVendor.UUIDString;
+        //NSLog(@"%@", clientID);
+        _client = [[MQTTClient alloc] initWithClientId:clientID];
+        _client.username = @"sisafa_test";
+        _client.password = @"T5KIP1";
+        _client.port = 1883;
+    }
+    
+    return self;
 }
 
 @end

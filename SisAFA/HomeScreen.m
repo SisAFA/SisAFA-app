@@ -7,7 +7,6 @@
 //
 
 #import "HomeScreen.h"
-#import "MQTTSisAFAClient.h"
 
 @interface HomeScreen ()
 
@@ -19,13 +18,15 @@
     BOOL mqttConnected;
     MQTTSisAFAClient *testMQTT;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    testMQTT = [[MQTTSisAFAClient alloc] init];
+    testMQTT = [MQTTSisAFAClient sharedClient];
     [testMQTT subscribeToATopicAndReceiveMessages];
     mqttConnected = YES;
     __weak typeof (self) weakSelf = self;
+    
     // define the handler that will be called when MQTT messages are received by the client
     [testMQTT.client setMessageHandler:^(MQTTMessage *message) {
         NSString *text = message.payloadString;
