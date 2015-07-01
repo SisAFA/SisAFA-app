@@ -33,6 +33,8 @@
         weakSelf.labelStatusSystem.text = text;
         NSLog(@"received message %@", text);
         
+        //tratar
+        
     }];
     
 }

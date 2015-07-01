@@ -42,10 +42,10 @@
 - (void)sendMessage
 {
     // connect to the MQTT server
-    [self.client connectToHost:kMQTTServerHost
-             completionHandler:^(NSUInteger code) {
-                 
-                 if (code == ConnectionAccepted) {
+//    [self.client connectToHost:kMQTTServerHost
+//             completionHandler:^(NSUInteger code) {
+//                 
+//                 if (code == ConnectionAccepted) {
                      // when the client is connected, send a MQTT message
                      [self.client publishString:@"MQTT iOS"
                                         toTopic:kTopic
@@ -54,9 +54,9 @@
                               completionHandler:^(int mid) {
                                   
                               }];
-                 }
-                 
-             }];
+//                 }
+//                 
+//             }];
 }
 
 - (void)disconnectFromTheServer
@@ -98,6 +98,7 @@
         _client.username = @"sisafa_test";
         _client.password = @"T5KIP1";
         _client.port = 1883;
+        
     }
     
     return self;
