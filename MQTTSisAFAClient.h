@@ -19,9 +19,7 @@
 @property (nonatomic) int isActivated;          //0 (desligado), 1 (ligado) e 2 (disparado) - status - subscribe
 //@property (nonatomic) int powerOperation;       //0 (ligar), 1 (desligar), 2 (disparar) - comando - publisher
 @property (nonatomic) NSString *GPSData;        // longitude, latitude, data, hora
-@property (nonatomic) MKMapView *map;
-//@property (nonatomic) Information *currentViewController;
-//@property (nonatomic) HomeScreen *test;
+@property (nonatomic) NSMutableArray *allMapAnnotations;
 
 - (void)subscribeToAStatusAndGPSTopcis;
 - (void)sendSignalToPublisher:(NSString *)signal;

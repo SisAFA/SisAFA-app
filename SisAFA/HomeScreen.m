@@ -10,14 +10,24 @@
 
 #define ONE_CHARACTER 1
 
-//receive message and commands
+//receive message
 #define DESACTIVATE 0
 #define ACTIVATE 1
 #define ALERT 2
+
+//commands
 #define ALERT_COMMAND @"2"
 #define ACTIVATION_COMMAND @"1"
 #define SHUTDOWN_COMMAND @"0"
 #define STORYBOARD_ID @"info"
+
+//gps data
+#define LATITUDE 0
+#define LONGITUDE 1
+#define DATE 2
+#define HOUR 3
+
+
 
 //check current view controller
 //#define HOMESCREEN_CONTROLLER 0
@@ -64,49 +74,70 @@
                     
                 } else if ([[MQTTSisAFAClient sharedClient] isActivated] == ALERT) {
                     
-                    //if not activate, activate before presente information
-//                    if ([[MQTTSisAFAClient sharedClient] isActivated] != ACTIVATE) {
-//                        [[MQTTSisAFAClient sharedClient] sendSignalToPublisher:ACTIVATION_COMMAND];
-//                    }
-                    
-                    [homeScreenController presentInformationController:homeScreenController];
+                    //present information controller
+                    Information *informationController = [homeScreenController.storyboard instantiateViewControllerWithIdentifier:STORYBOARD_ID];
+                    //[[MQTTSisAFAClient sharedClient] setCurrentViewController:informationController];
+                    [homeScreenController presentViewController:informationController animated:YES completion:nil];
                 }
                 
                 NSLog(@"test: %d", [[MQTTSisAFAClient sharedClient] isActivated]);
                 
-            } else if ([[MQTTSisAFAClient sharedClient] isActivated] == ACTIVATE){
+            } else if ([[MQTTSisAFAClient sharedClient] isActivated] == ALERT){
                 //set receive GPS data only if activate status
-                [[MQTTSisAFAClient sharedClient] setGPSData:text];
-                
-                //if ([[Information sharedInformation] isKindOfClass:[Information class]]) {
-                    
-                    //[[Information sharedInformation] setSisAFAPosition];
-                
-                //} else if ([homeScreenController topMostController] == homeScreenController) {
-                    
-                  //  [homeScreenController presentInformationController:homeScreenController];
-                
-                //}
-                
-                NSLog(@"gps: %@", [[MQTTSisAFAClient sharedClient] GPSData]);
+                //[[MQTTSisAFAClient sharedClient] setGPSData:text];
+                [homeScreenController buildAnnotation:text];
             }
         });
         
     }];
 }
 
+- (void)buildAnnotation:(NSString *)receive
+{
+    //get gps data
+    NSArray *data = [receive componentsSeparatedByString:@","];
+    
+    // formatting date
+    NSMutableString *date = [NSMutableString stringWithString:[data objectAtIndex:DATE]];
+    [date insertString:@"/" atIndex:2];
+    [date insertString:@"/" atIndex:5];
+    
+    //formatting hour
+    NSMutableString *hour = [NSMutableString stringWithString:[data objectAtIndex:HOUR]];
+    [hour insertString:@":" atIndex:2];
+    [hour insertString:@":" atIndex:5];
+    
+    //join date and hour to set as title annotation
+    [date appendString:@" - "];
+    [date appendString:hour];
+    
+    //treat gps coordinates
+    //MKCoordinateRegion myRegion;
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    CLLocationCoordinate2D myCoordinate;
+    
+    myCoordinate.latitude = [[data objectAtIndex:LATITUDE] doubleValue];
+    myCoordinate.longitude = [[data objectAtIndex:LONGITUDE] doubleValue];
+    annotation.coordinate = myCoordinate;
+    annotation.title = date;
+    annotation.subtitle = @"SisAFA position";
+    
+    NSMutableArray *allAnnotations = [[MQTTSisAFAClient sharedClient] allMapAnnotations];
+    [allAnnotations addObject:annotation];
+    [[MQTTSisAFAClient sharedClient] setAllMapAnnotations:allAnnotations];
+    
+    NSMutableArray *tmp = [[MQTTSisAFAClient sharedClient] allMapAnnotations];
+    for (MKPointAnnotation *pa in tmp) {
+        NSLog(@"title: %@, subtitle: %@, latitude: %f, longitude: %f", pa.title, pa.subtitle, pa.coordinate.latitude, pa.coordinate.longitude);
+    }
+    
+}
+
+
 - (void)viewWillAppear:(BOOL)animated
 {
     //[[MQTTSisAFAClient sharedClient] setCurrentViewController:0];
     //[[MQTTSisAFAClient sharedClient] sendGPSToTest:@"-15.987540,-48.544140,030213,022659"];
-}
-
-- (void)presentInformationController:(UIViewController *)controller
-{
-    //present information controller
-    Information *informationController = [controller.storyboard instantiateViewControllerWithIdentifier:STORYBOARD_ID];
-    //[[MQTTSisAFAClient sharedClient] setCurrentViewController:informationController];
-    [controller presentViewController:informationController animated:YES completion:nil];
 }
 
 - (IBAction)powerButton:(id)sender

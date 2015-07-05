@@ -114,7 +114,7 @@
         _client.port = 1883;
         
         _GPSData = gpsDataTest;
-        _map = [[MKMapView alloc] init];
+        _allMapAnnotations = [[NSMutableArray alloc] init];
     }
     
     return self;

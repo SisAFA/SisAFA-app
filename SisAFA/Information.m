@@ -8,12 +8,6 @@
 
 #import "Information.h"
 
-//gps data
-#define LATITUDE 0
-#define LONGITUDE 1
-#define DATE 2
-#define HOUR 3
-
 //alert view
 #define CANCEL_BUTTON 0
 #define YES_BUTTON 1
@@ -26,61 +20,25 @@
 
 @implementation Information
 {
-    
-    
+    NSUInteger amountOfAnnotations;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self setSisAFAPosition];
+    
+    //dispatch_async(dispatch_get_main_queue(), ^{
+    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(setSisAFAPosition) userInfo:nil repeats:YES];
+    
+    //});
 }
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    //[[MQTTSisAFAClient sharedClient] setCurrentViewController:1];
-}
-
-//+ (id) sharedInformation
-//{
-//    static Information *sharedInformation = nil;
-//    
-//    return sharedInformation;
-//}
 
 - (void)setSisAFAPosition
 {
-    //get gps data
-    NSArray *data = [[[MQTTSisAFAClient sharedClient] GPSData] componentsSeparatedByString:@","];
-    
-    // formatting date
-    NSMutableString *date = [NSMutableString stringWithString:[data objectAtIndex:DATE]];
-    [date insertString:@"/" atIndex:2];
-    [date insertString:@"/" atIndex:5];
-    
-    //formatting hour
-    NSMutableString *hour = [NSMutableString stringWithString:[data objectAtIndex:HOUR]];
-    [hour insertString:@":" atIndex:2];
-    [hour insertString:@":" atIndex:5];
-    
-    //join date and hour to set as title annotation
-    [date appendString:@" - "];
-    [date appendString:hour];
-    
-    //treat gps coordinates
-    MKCoordinateRegion myRegion;
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    CLLocationCoordinate2D myCoordinate;
-    
-    myCoordinate.latitude = [[data objectAtIndex:LATITUDE] doubleValue];
-    myCoordinate.longitude = [[data objectAtIndex:LONGITUDE] doubleValue];
-    annotation.coordinate = myCoordinate;
-    annotation.title = date;
-    annotation.subtitle = @"SisAFA position";
-    
-    myRegion.center = myCoordinate;
-    [self.mapView setRegion:myRegion animated:YES];
-    [self.mapView addAnnotation:annotation];
+    NSMutableArray *allAnnotations = [[MQTTSisAFAClient sharedClient] allMapAnnotations];
+    for (MKPointAnnotation *annotation in allAnnotations) {
+        [self.mapView addAnnotation:annotation];
+    }
     
     [self zoomToFitMapAnnotations];
 }
