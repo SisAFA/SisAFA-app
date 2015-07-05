@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "MQTTSisAFAClient.h"
 
-@interface Information : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface Information : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
 
-@property NSArray* images;
-
-@property UICollectionView* imagesCollectionView;
-@property BOOL active;
-@property BOOL mqttConnected;
 @property MQTTSisAFAClient *testMQTT;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+- (IBAction)silence:(id)sender;
+- (void)zoomToFitMapAnnotations;
+- (void)setSisAFAPosition;
+
+//+ (id) sharedInformation;
 
 @end

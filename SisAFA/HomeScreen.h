@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MQTTSisAFAClient.h"
+#import "Information.h"
 
 @interface HomeScreen: UIViewController
 
 - (IBAction)powerButton:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *labelStatusSystem;
+- (IBAction)shootingCarAlarm:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *subscribeStatusSystem;
 
 @end
 

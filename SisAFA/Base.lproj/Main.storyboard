@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ln8-Dw-a98">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ln8-Dw-a98">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -9,7 +9,7 @@
         <!--Home Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Home Screen" customClass="HomeScreen" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" userLabel="Home Screen" customClass="HomeScreen" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -52,7 +52,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="8j4-Ay-Dy6" kind="presentation" id="vKo-3A-i3v"/>
+                                            <action selector="shootingCarAlarm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FQa-q5-Feh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -123,7 +123,7 @@
                                             <action selector="powerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XbB-w5-cn5"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Activate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psR-sH-FDr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Desactivate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psR-sH-FDr">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="MhU-m9-Zh5"/>
@@ -293,7 +293,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="labelStatusSystem" destination="psR-sH-FDr" id="KkN-ot-e7H"/>
+                        <outlet property="subscribeStatusSystem" destination="psR-sH-FDr" id="l5n-Ss-T9A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -321,7 +321,7 @@
         <!--Information-->
         <scene sceneID="MOL-TM-vfw">
             <objects>
-                <viewController id="8j4-Ay-Dy6" userLabel="Information" customClass="Information" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8j4-Ay-Dy6" userLabel="Information" customClass="Information" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u9x-I0-pSG"/>
                         <viewControllerLayoutGuide type="bottom" id="hND-JE-gyx"/>
@@ -333,149 +333,79 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxy-S1-7MM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Voltar" id="x4A-0G-FiE">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="y8x-6D-kRt"/>
+                                    <barButtonItem image="shutdown.png" id="x4A-0G-FiE">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="RSS-nt-n5b"/>
+                                            <action selector="silence:" destination="8j4-Ay-Dy6" id="7kw-Rx-Tej"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eeZ-lH-LZA"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DPR-Vg-cVP" userLabel="Photo bigger" customClass="PhotoView">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="298" id="Fob-ri-7hE">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="247"/>
-                                    </constraint>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Fob-ri-7hE"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Fob-ri-7hE"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-gj-Eb0" customClass="MapView">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-gj-Eb0">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="353" id="lCL-2O-0LP"/>
+                                    <constraint firstAttribute="height" constant="736" id="vYD-03-jOK"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="lCL-2O-0LP"/>
+                                        <exclude reference="vYD-03-jOK"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="lCL-2O-0LP"/>
+                                        <exclude reference="lCL-2O-0LP"/>
+                                        <exclude reference="vYD-03-jOK"/>
                                     </mask>
                                 </variation>
                             </mapView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kwl-uh-Jz6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="6Hw-tw-3Ll"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uu6-Ll-5Pi">
-                                    <size key="itemSize" width="70" height="70"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellId" id="LGz-GA-ACd">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6Hw-tw-3Ll"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="6Hw-tw-3Ll"/>
-                                    </mask>
-                                </variation>
-                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ua9-gj-Eb0" firstAttribute="top" secondItem="u9x-I0-pSG" secondAttribute="bottom" id="2wY-Ue-XM0"/>
                             <constraint firstItem="Ua9-gj-Eb0" firstAttribute="leading" secondItem="Og5-os-qKV" secondAttribute="leadingMargin" constant="-16" id="BRM-zJ-dGz"/>
+                            <constraint firstItem="Wxy-S1-7MM" firstAttribute="top" secondItem="Ua9-gj-Eb0" secondAttribute="bottom" id="By4-Rt-iGZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wxy-S1-7MM" secondAttribute="trailing" constant="-16" id="DVa-lh-O0U"/>
-                            <constraint firstItem="kwl-uh-Jz6" firstAttribute="leading" secondItem="Og5-os-qKV" secondAttribute="leadingMargin" constant="-16" id="Fiv-7r-wS6"/>
-                            <constraint firstItem="Wxy-S1-7MM" firstAttribute="top" secondItem="Ua9-gj-Eb0" secondAttribute="bottom" constant="383" id="Jvo-2i-1Y8"/>
-                            <constraint firstItem="Wxy-S1-7MM" firstAttribute="top" secondItem="DPR-Vg-cVP" secondAttribute="bottom" constant="86" id="Scy-NB-RKF">
-                                <variation key="heightClass=regular-widthClass=compact" constant="137"/>
-                            </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="kwl-uh-Jz6" secondAttribute="trailing" constant="-16" id="Tap-7e-UCR"/>
                             <constraint firstItem="Wxy-S1-7MM" firstAttribute="leading" secondItem="Og5-os-qKV" secondAttribute="leadingMargin" constant="-16" id="VAg-I0-v6x"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DPR-Vg-cVP" secondAttribute="trailing" constant="-16" id="f24-h4-KQE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ua9-gj-Eb0" secondAttribute="trailing" constant="-16" id="psk-Li-LjA"/>
                             <constraint firstItem="hND-JE-gyx" firstAttribute="top" secondItem="Wxy-S1-7MM" secondAttribute="bottom" id="siX-ws-mgI"/>
-                            <constraint firstItem="Wxy-S1-7MM" firstAttribute="top" secondItem="kwl-uh-Jz6" secondAttribute="bottom" id="xfE-mN-dZo">
-                                <variation key="heightClass=regular-widthClass=compact" constant="53"/>
-                            </constraint>
-                            <constraint firstItem="DPR-Vg-cVP" firstAttribute="leading" secondItem="Og5-os-qKV" secondAttribute="leadingMargin" constant="-16" id="yw1-Wn-5vp"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Wxy-S1-7MM"/>
-                                <exclude reference="DPR-Vg-cVP"/>
                                 <exclude reference="Ua9-gj-Eb0"/>
-                                <exclude reference="kwl-uh-Jz6"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="siX-ws-mgI"/>
-                                <exclude reference="DVa-lh-O0U"/>
-                                <exclude reference="Jvo-2i-1Y8"/>
-                                <exclude reference="Scy-NB-RKF"/>
-                                <exclude reference="VAg-I0-v6x"/>
-                                <exclude reference="xfE-mN-dZo"/>
-                                <exclude reference="f24-h4-KQE"/>
-                                <exclude reference="yw1-Wn-5vp"/>
                                 <exclude reference="2wY-Ue-XM0"/>
                                 <exclude reference="BRM-zJ-dGz"/>
                                 <exclude reference="psk-Li-LjA"/>
-                                <exclude reference="Fiv-7r-wS6"/>
-                                <exclude reference="Tap-7e-UCR"/>
+                                <exclude reference="By4-Rt-iGZ"/>
+                                <exclude reference="DVa-lh-O0U"/>
+                                <exclude reference="VAg-I0-v6x"/>
+                                <exclude reference="siX-ws-mgI"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Wxy-S1-7MM"/>
-                                <include reference="DPR-Vg-cVP"/>
                                 <include reference="Ua9-gj-Eb0"/>
-                                <include reference="kwl-uh-Jz6"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="siX-ws-mgI"/>
-                                <include reference="DVa-lh-O0U"/>
-                                <include reference="Jvo-2i-1Y8"/>
-                                <include reference="Scy-NB-RKF"/>
-                                <include reference="VAg-I0-v6x"/>
-                                <include reference="xfE-mN-dZo"/>
-                                <include reference="f24-h4-KQE"/>
-                                <include reference="yw1-Wn-5vp"/>
                                 <include reference="2wY-Ue-XM0"/>
                                 <include reference="BRM-zJ-dGz"/>
                                 <include reference="psk-Li-LjA"/>
-                                <include reference="Fiv-7r-wS6"/>
-                                <include reference="Tap-7e-UCR"/>
+                                <include reference="By4-Rt-iGZ"/>
+                                <include reference="DVa-lh-O0U"/>
+                                <include reference="VAg-I0-v6x"/>
+                                <include reference="siX-ws-mgI"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Ua9-gj-Eb0" id="cox-ol-3s8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbu-M9-g8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -504,8 +434,6 @@
         <image name="alarm-button-edited.png" width="300" height="300"/>
         <image name="city.jpg" width="1080" height="1920"/>
         <image name="power-button-512-red.png" width="512" height="512"/>
+        <image name="shutdown.png" width="32" height="32"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="RSS-nt-n5b"/>
-    </inferredMetricsTieBreakers>
 </document>

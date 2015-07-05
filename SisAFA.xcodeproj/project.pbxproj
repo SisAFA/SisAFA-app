@@ -15,9 +15,7 @@
 		93469B241AFA8785005A5CC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93469B221AFA8785005A5CC5 /* LaunchScreen.xib */; };
 		93469B301AFA8785005A5CC5 /* SisAFATests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B2F1AFA8785005A5CC5 /* SisAFATests.m */; };
 		93469B3E1AFA8DBA005A5CC5 /* Information.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B3D1AFA8DBA005A5CC5 /* Information.m */; };
-		93469B411AFA8FB1005A5CC5 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B401AFA8FB1005A5CC5 /* MapView.m */; };
 		93469B431AFA906C005A5CC5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93469B421AFA906C005A5CC5 /* MapKit.framework */; };
-		93469B461AFA928E005A5CC5 /* PhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B451AFA928E005A5CC5 /* PhotoView.m */; };
 		93469B511AFA98D3005A5CC5 /* dakar-seat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93469B4F1AFA98D3005A5CC5 /* dakar-seat.jpg */; };
 		93469B521AFA98D3005A5CC5 /* city.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93469B501AFA98D3005A5CC5 /* city.jpg */; };
 		93469B561AFA9923005A5CC5 /* alarm-button-edited.png in Resources */ = {isa = PBXBuildFile; fileRef = 93469B531AFA9923005A5CC5 /* alarm-button-edited.png */; };
@@ -26,6 +24,7 @@
 		93469B5B1AFAA8CD005A5CC5 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B5A1AFAA8CD005A5CC5 /* Settings.m */; };
 		93469B5E1AFAAC18005A5CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93469B5C1AFAAC18005A5CC5 /* Main.storyboard */; };
 		93469B651B0EDD86005A5CC5 /* MQTTSisAFAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 93469B641B0EDD86005A5CC5 /* MQTTSisAFAClient.m */; };
+		9360672B1B496F89009E61DD /* shutdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 9360672A1B496F89009E61DD /* shutdown.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +54,7 @@
 		93469B2F1AFA8785005A5CC5 /* SisAFATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SisAFATests.m; sourceTree = "<group>"; };
 		93469B3C1AFA8DBA005A5CC5 /* Information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Information.h; sourceTree = "<group>"; };
 		93469B3D1AFA8DBA005A5CC5 /* Information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Information.m; sourceTree = "<group>"; };
-		93469B3F1AFA8FB1005A5CC5 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
-		93469B401AFA8FB1005A5CC5 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		93469B421AFA906C005A5CC5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		93469B441AFA928E005A5CC5 /* PhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoView.h; sourceTree = "<group>"; };
-		93469B451AFA928E005A5CC5 /* PhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoView.m; sourceTree = "<group>"; };
 		93469B4F1AFA98D3005A5CC5 /* dakar-seat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dakar-seat.jpg"; sourceTree = "<group>"; };
 		93469B501AFA98D3005A5CC5 /* city.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = city.jpg; sourceTree = "<group>"; };
 		93469B531AFA9923005A5CC5 /* alarm-button-edited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm-button-edited.png"; sourceTree = "<group>"; };
@@ -70,6 +65,7 @@
 		93469B5D1AFAAC18005A5CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93469B631B0EDD86005A5CC5 /* MQTTSisAFAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTTSisAFAClient.h; sourceTree = "<group>"; };
 		93469B641B0EDD86005A5CC5 /* MQTTSisAFAClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTTSisAFAClient.m; sourceTree = "<group>"; };
+		9360672A1B496F89009E61DD /* shutdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shutdown.png; sourceTree = "<group>"; };
 		D32423BFF310D7C860100932 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,10 +127,6 @@
 				93469B1B1AFA8785005A5CC5 /* HomeScreen.m */,
 				93469B3C1AFA8DBA005A5CC5 /* Information.h */,
 				93469B3D1AFA8DBA005A5CC5 /* Information.m */,
-				93469B3F1AFA8FB1005A5CC5 /* MapView.h */,
-				93469B401AFA8FB1005A5CC5 /* MapView.m */,
-				93469B441AFA928E005A5CC5 /* PhotoView.h */,
-				93469B451AFA928E005A5CC5 /* PhotoView.m */,
 				93469B591AFAA8CD005A5CC5 /* Settings.h */,
 				93469B5A1AFAA8CD005A5CC5 /* Settings.m */,
 				93469B5C1AFAAC18005A5CC5 /* Main.storyboard */,
@@ -187,6 +179,7 @@
 		93469B481AFA98AA005A5CC5 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9360672A1B496F89009E61DD /* shutdown.png */,
 				93469B4F1AFA98D3005A5CC5 /* dakar-seat.jpg */,
 				93469B501AFA98D3005A5CC5 /* city.jpg */,
 			);
@@ -294,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93469B511AFA98D3005A5CC5 /* dakar-seat.jpg in Resources */,
+				9360672B1B496F89009E61DD /* shutdown.png in Resources */,
 				93469B521AFA98D3005A5CC5 /* city.jpg in Resources */,
 				93469B571AFA9923005A5CC5 /* power-button-512-red.png in Resources */,
 				93469B5E1AFAAC18005A5CC5 /* Main.storyboard in Resources */,
@@ -355,9 +349,7 @@
 				93469B651B0EDD86005A5CC5 /* MQTTSisAFAClient.m in Sources */,
 				93469B191AFA8785005A5CC5 /* AppDelegate.m in Sources */,
 				93469B3E1AFA8DBA005A5CC5 /* Information.m in Sources */,
-				93469B461AFA928E005A5CC5 /* PhotoView.m in Sources */,
 				93469B161AFA8785005A5CC5 /* main.m in Sources */,
-				93469B411AFA8FB1005A5CC5 /* MapView.m in Sources */,
 				93469B5B1AFAA8CD005A5CC5 /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

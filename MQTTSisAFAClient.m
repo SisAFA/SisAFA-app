@@ -8,55 +8,70 @@
 
 #import "MQTTSisAFAClient.h"
 
-//#define kMQTTServerHost @"iot.eclipse.org"
-//#define kTopic @"/MQTTKit/example"
+#define gpsDataTest @"-15.987540,-48.044140,291091,040159"
+
 #define kMQTTServerHost @"matheusfonseca.me"
-#define kTopic @"sisafa/sisafa_test/test"
+#define test_kTopic @"sisafa_test/test"
+#define GPS_kTopic @"sisafa_test/gps"
+#define status_kTopic @"sisafa_test/status"
+#define command_kTopic @"sisafa_test/power"
 
 @implementation MQTTSisAFAClient
 
-- (void)subscribeToATopicAndReceiveMessages
+- (void)subscribeToAStatusAndGPSTopcis
 {
-    // create the client with a unique client ID
-//    NSString *clientID = [UIDevice currentDevice].identifierForVendor.UUIDString;
-//    NSLog(@"%@", clientID);
-//    self.client = [[MQTTClient alloc] initWithClientId:clientID];
-//    self.client.username = @"sisafa_test";
-//    self.client.password = @"T5KIP1";
-//    self.client.port = 1883;
-    
     // connect the MQTT client
     [self.client connectToHost:kMQTTServerHost
              completionHandler:^(MQTTConnectionReturnCode code) {
                  if (code == ConnectionAccepted) {
-                     // when the client is connected, subscribe to the topic to receive message.
-                     [self.client subscribe:kTopic
+                     // when the client is connected, subscribe to the topic to receive message
+                     
+                     [self.client subscribe:GPS_kTopic
                       withCompletionHandler:^(NSArray *grantedQos) {
                           // The client is effectively subscribed to the topic when this completion handler is called
-                          NSLog(@"subscribed to topic %@", kTopic);
+                          NSLog(@"subscribed to topic %@", GPS_kTopic);
+                      }];
+                     
+                     [self.client subscribe:status_kTopic
+                      withCompletionHandler:^(NSArray *grantedQos) {
+                          // The client is effectively subscribed to the topic when this completion handler is called
+                          NSLog(@"subscribed to topic %@", status_kTopic);
                       }];
                  }
              }];
 }
 
-- (void)sendMessage
+- (void)sendSignalToPublisher:(NSString *)signal
 {
-    // connect to the MQTT server
-//    [self.client connectToHost:kMQTTServerHost
-//             completionHandler:^(NSUInteger code) {
-//                 
-//                 if (code == ConnectionAccepted) {
-                     // when the client is connected, send a MQTT message
-                     [self.client publishString:@"MQTT iOS"
-                                        toTopic:kTopic
-                                        withQos:AtMostOnce
-                                         retain:NO
-                              completionHandler:^(int mid) {
-                                  
-                              }];
-//                 }
-//                 
-//             }];
+    [self.client publishString:signal
+                       toTopic:status_kTopic
+                       withQos:AtMostOnce
+                        retain:NO
+             completionHandler:^(int mid) {
+                 
+    }];
+}
+
+- (void)sendGPSToTest:(NSString *)message
+{
+    [self.client publishString:message
+                       toTopic:GPS_kTopic
+                       withQos:AtMostOnce
+                        retain:NO
+             completionHandler:^(int mid) {
+                 
+             }];
+}
+
+- (void)sendStatusToTest:(NSString *)message
+{
+    [self.client publishString:message
+                       toTopic:status_kTopic
+                       withQos:AtMostOnce
+                        retain:NO
+             completionHandler:^(int mid) {
+                 
+             }];
 }
 
 - (void)disconnectFromTheServer
@@ -93,15 +108,34 @@
     
     if (self) {
         NSString *clientID = [UIDevice currentDevice].identifierForVendor.UUIDString;
-        //NSLog(@"%@", clientID);
         _client = [[MQTTClient alloc] initWithClientId:clientID];
         _client.username = @"sisafa_test";
         _client.password = @"T5KIP1";
         _client.port = 1883;
         
+        _GPSData = gpsDataTest;
+        _map = [[MKMapView alloc] init];
     }
     
     return self;
 }
+
+//- (void)setGPSData:(NSString *)GPSData
+//{
+//    _GPSData = GPSData;
+//    _currentViewController = [self topMostController];
+//    
+//}
+//
+//- (UIViewController *) topMostController
+//{
+//    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+//    
+//    while (topController.presentedViewController) {
+//        topController = topController.presentedViewController;
+//    }
+//    
+//    return topController;
+//}
 
 @end
