@@ -44,7 +44,7 @@
 - (void)sendSignalToPublisher:(NSString *)signal
 {
     [self.client publishString:signal
-                       toTopic:status_kTopic
+                       toTopic:command_kTopic
                        withQos:AtMostOnce
                         retain:NO
              completionHandler:^(int mid) {

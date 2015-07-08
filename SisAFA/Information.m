@@ -75,7 +75,6 @@
         [[MQTTSisAFAClient sharedClient] sendSignalToPublisher:ACTIVATION_COMMAND];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning {

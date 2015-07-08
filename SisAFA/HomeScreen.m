@@ -99,18 +99,21 @@
     
     // formatting date
     NSMutableString *date = [NSMutableString stringWithString:[data objectAtIndex:DATE]];
-    [date insertString:@"/" atIndex:2];
-    [date insertString:@"/" atIndex:5];
+    [date insertString:@"/" atIndex:4];
+    [date insertString:@"/" atIndex:7];
+    [date insertString:@" - " atIndex:10];
+    [date insertString:@":" atIndex:15];
+    [date insertString:@":" atIndex:18];
     
     //formatting hour
-    NSMutableString *hour = [NSMutableString stringWithString:[data objectAtIndex:HOUR]];
-    [hour insertString:@":" atIndex:2];
-    [hour insertString:@":" atIndex:5];
+//    NSMutableString *hour = [NSMutableString stringWithString:[data objectAtIndex:HOUR]];
+//    [hour insertString:@":" atIndex:2];
+//    [hour insertString:@":" atIndex:5];
     
     //join date and hour to set as title annotation
-    [date appendString:@" - "];
-    [date appendString:hour];
-    
+//    [date appendString:@" - "];
+//    [date appendString:hour];
+//    
     //treat gps coordinates
     //MKCoordinateRegion myRegion;
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
